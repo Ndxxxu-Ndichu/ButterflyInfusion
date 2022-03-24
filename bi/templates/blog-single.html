@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="copyright" content="MACode ID, https://macodeid.com">
+
+  <title>Butterfly Infusion - Blog</title>
+
+<link rel="stylesheet" href="{{url_for('static', filename='animate.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='maicons.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='owl.carousel.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='theme.css')}}">
+
+
+</head>
+<body>
+
+
+  <!-- Back to top button -->
+  <div class="back-to-top"></div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+      <div class="container">
+        <a href="/" class="navbar-brand">Butterfly<span class="text-primary">Infusion</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-section pt-5">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ul class="breadcrumb p-0 mb-0 bg-transparent">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+            <li class="breadcrumb-item active">{{post.title}}</li>
+          </ul>
+        </nav>
+        
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="blog-single-wrap">
+              <div class="header">
+                <div class="post-thumb">
+                  <img src="{{post.path}}" alt="">
+                </div>
+                <div class="meta-header">
+                  <div class="post-author">
+                    <div class="avatar">
+                      <img src="{{url_for('static', filename='me.png')}}" alt="">
+                    </div>
+                    by <a>{{post.author}}</a>
+                  </div>
+
+                </div>
+              </div>
+              <h1 class="post-title">{{post.title}}</h1>
+              <div class="post-meta">
+                <div class="post-date">
+                  <img style="width:30px;" src="{{url_for('static', filename='date.png')}}">
+                   <a>{{post.date}}</a>
+                </div>
+                <div class="post-comment-count ml-2">
+
+                </div>
+              </div>
+
+              <div class="post-content">
+               {{post.content | safe}}
+              </div>
+            </div>
+  
+            <div class="comment-form-wrap pt-5">
+              <h2 class="mb-5">Leave a comment</h2>
+              <form action="{{url_for('app.post', blog_id=post.blog_id)}}" method="post">
+                <div class="form-row form-group">
+                  <div class="col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" id="name">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" id="email">
+                  </div>
+                </div>
+    
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea name="message" id="message" cols="30" rows="8" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Post Comment" class="btn btn-primary">
+                </div>
+    
+              </form>
+            </div>
+  
+          </div>
+          <div class="col-lg-4">
+            <div class="widget">
+              <!-- Widget search -->
+              
+              <!-- Widget Categories -->
+              
+  
+              <!-- Widget recent post -->
+              <div class="widget-box">
+                <h4 class="widget-title">Recent Post</h4>
+                <div class="divider"></div>
+
+                {% for post in posts %}
+                <div class="blog-item">
+                    <a class="post-thumb" href="{{url_for('app.post', blog_id=post.blog_id)}}">
+                      <img src="{{post.path}}" alt="">
+                    </a>
+                    <div class="content">
+                      <h6 class="post-title"><a href="{{url_for('app.post', blog_id=post.blog_id)}}">{{post.title}}</a></h6>
+                      <div class="meta">
+                        <a href="#">{{post.date}}</a>
+                        <a href="#">{{post.author}}</a>
+
+                      </div>
+                    </div>
+                </div>
+                {% endfor %}
+  
+
+  
+
+  
+              </div>
+  
+              <!-- Widget Tag Cloud -->
+              
+  
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-3 py-3">
+          <h3>Butterfly<span class="text-primary">Infusion</span></h3>
+          <p>We do the hard tasks so you dont have to!</p>
+
+          <p><a href="mailto:butterflyinfusion@gmail.com" >butterflyinfusion@gmail.com</a></p>
+          <p><a>+254-772 554 029</a></p>
+        </div>
+        <!--<div class="col-lg-3 py-3">
+          <h5>Quick Links</h5>
+          <ul class="footer-menu">
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Report a Bug</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 py-3">
+          <h5>About Us</h5>
+          <ul class="footer-menu">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Our Teams</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">News & Press</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 py-3">
+          <h5>Subscribe</h5>
+          <form action="#">
+            <input type="text" class="form-control" placeholder="Enter your mail..">
+          </form>
+
+          <div class="sosmed-button mt-4">
+            <a href="#"><span class="mai-logo-facebook-f"></span></a>
+            <a href="#"><span class="mai-logo-twitter"></span></a>
+            <a href="#"><span class="mai-logo-google"></span></a>
+            <a href="#"><span class="mai-logo-linkedin"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 py-2">
+          <p id="copyright">&copy; 2020 <a href="https://macodeid.com/">MACode ID</a>. All rights reserved</p>
+        </div>
+        <div class="col-sm-6 py-2 text-right">
+          <div class="d-inline-block px-3">
+            <a href="#">Privacy</a>
+          </div>
+          <div class="d-inline-block px-3">
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .container -->
+  </footer> <!-- .page-footer -->
+
+
+ <script src="{{url_for('static', filename='jquery-3.5.1.min.js')}}"></script>
+  <script src="{{url_for('static', filename='bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='wow.min.js')}}"></script>
+  <script src="{{url_for('static', filename='owl.carousel.min.js')}}"></script>
+  <script src="{{url_for('static', filename='jquery.waypoints.min.js')}}"></script>
+  <script src="{{url_for('static', filename='jquery.animateNumber.min.js')}}"></script>
+  <script src="{{url_for('static', filename='google-maps.js')}}"></script>
+  <script src="{{url_for('static', filename='theme.js')}}"></script>
+
+
+</body>
+</html>

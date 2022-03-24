@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="copyright" content="MACode ID, https://macodeid.com">
+
+  <title>Butterfly Infusion - Blog</title>
+
+<link rel="stylesheet" href="{{url_for('static', filename='animate.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='maicons.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='owl.carousel.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='theme.css')}}">
+
+
+</head>
+<body>
+
+  <!-- Back to top button -->
+  <div class="back-to-top"></div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+      <div class="container">
+        <a href="/" class="navbar-brand">Butterfly<span class="text-primary">Infusion</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-section pt-5">
+      <div class="container">
+          <form action="/poster" method="post" enctype="multipart/form-data">
+                <div class="form-row form-group">
+                    <div class="col-md-6">
+                    <label for="id">ID</label>
+                    <input value="{{blog_id}}" name="blog_id" class="form-control" id="id">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="name">Author</label>
+                    <input type="text" name="author" class="form-control" id="name">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="date">Date</label>
+                    <input type="text" value="{{now}}" name="date" class="form-control" id="date" readonly>
+                  </div>
+                    -<div class="col-md-6">
+                    <label for="image">Image</label>
+                    <input type="file" name="file" class="form-control" id="image">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="title">Blog Title</label>
+                  <input type="text" name="title" class="form-control" id="title">
+                </div>
+
+                <div class="form-group">
+                  <label for="content">Blog Content</label>
+                  <textarea name="content" id="content" cols="30" rows="8" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Post Content" class="btn btn-primary">
+                </div>
+
+              </form>
+      </div>
+    </div>
+  </main>
+
+
+
+
+ <script src="{{url_for('static', filename='jquery-3.5.1.min.js')}}"></script>
+  <script src="{{url_for('static', filename='bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='wow.min.js')}}"></script>
+  <script src="{{url_for('static', filename='owl.carousel.min.js')}}"></script>
+  <script src="{{url_for('static', filename='jquery.waypoints.min.js')}}"></script>
+  <script src="{{url_for('static', filename='jquery.animateNumber.min.js')}}"></script>
+  <script src="{{url_for('static', filename='google-maps.js')}}"></script>
+  <script src="{{url_for('static', filename='theme.js')}}"></script>
+
+
+</body>
+</html>
