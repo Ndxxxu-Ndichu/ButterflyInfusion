@@ -8,6 +8,7 @@ from .s3 import upload_file
 from werkzeug.utils import secure_filename
 import smtplib
 from email.message import EmailMessage
+from sqlalchemy import desc
 
 app = Blueprint('app', __name__)
 
@@ -17,7 +18,7 @@ app = Blueprint('app', __name__)
 
 @app.route('/')
 def index():
-    posts = Blogpost.query.all()
+    posts = Blogpost.query.all(desc(Blogpost.id))
     return render_template('index.html', posts=posts)
 
 @app.route('/', methods=['POST'])
