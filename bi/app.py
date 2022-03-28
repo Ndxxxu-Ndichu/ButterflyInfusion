@@ -56,13 +56,13 @@ def index_post():
 
 @app.route('/blog')
 def blog():
-    posts = Blogpost.query.all(desc(Blogpost.id))
+    posts = Blogpost.query.order_by(desc(Blogpost.id))
     return render_template('blog.html', posts=posts)
 
 @app.route('/blog/<int:blog_id>', methods=['GET', 'POST'])
 def post(blog_id):
     post = Blogpost.query.filter_by(blog_id=blog_id).one()
-    posts = Blogpost.query.all(desc(Blogpost.id))
+    posts = Blogpost.query.order_by(desc(Blogpost.id))
 
     if request.method == 'POST':
         name = request.form['name']
