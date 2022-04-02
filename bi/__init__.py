@@ -14,7 +14,7 @@ def create_app():
      app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:123456@localhost:5432/butterfly_blog"
     else:
         app.config['SECRET_KEY'] = 'bibciejbdxhasxhajabchbc'
-        app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://boskaadjldmhld:b6c15860778013f427a46c97602e01193062c3c014feae6927f00ff8f7b4b593@ec2-52-3-60-53.compute-1.amazonaws.com:5432/d13c2fqfr1tkcq"
+        app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://gppnardpcpltbm:fc4c9dcd6d6f64048d6781d667e530545283a7e59f7fb545cf02a4bb897aaada@ec2-44-194-4-127.compute-1.amazonaws.com:5432/d54a03ddvlhch6H"
 
 
     db.init_app(app)
