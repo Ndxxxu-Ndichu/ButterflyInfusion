@@ -27,8 +27,8 @@ def index_post():
     email = request.form['email']
     message = request.form['message']
 
-    EMAIL_ADDRESS = 'butterflyiinfusion@gmail.com'
-    EMAIL_PASSWORD = 'qochtpajkewowzed'
+    EMAIL_ADDRESS = 'btechinfusion@gmail.com'
+    EMAIL_PASSWORD = 'posxvopqfrccjurr'
 
     msg = EmailMessage()
     msg['subject'] = 'Client Enquiry'
@@ -69,8 +69,8 @@ def post(blog_id):
         email = request.form['email']
         message = request.form['message']
 
-        EMAIL_ADDRESS = 'butterflyiinfusion@gmail.com'
-        EMAIL_PASSWORD = 'qochtpajkewowzed'
+        EMAIL_ADDRESS = 'btechinfusion@gmail.com'
+        EMAIL_PASSWORD = 'posxvopqfrccjurr'
 
         msg = EmailMessage()
         msg['subject'] = 'Client Comment'
