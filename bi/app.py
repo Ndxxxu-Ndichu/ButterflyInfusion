@@ -18,7 +18,7 @@ app = Blueprint('app', __name__)
 
 @app.route('/')
 def index():
-    posts = Blogpost.query.order_by(desc(Blogpost.id))
+    posts = Blogpost.query.order_by(desc(Blogpost.id)).limit(4).all()
     return render_template('index.html', posts=posts)
 
 @app.route('/', methods=['POST'])
