@@ -7,7 +7,7 @@ mail = Mail()
 
 def create_app():
     app = Flask(__name__)
-    ENV = 'prod'
+    ENV = 'dev'
 
     if ENV == 'dev':
      app.config['SECRET_KEY'] = 'bibciejbdxhasxhajabchbc'
