@@ -15,7 +15,7 @@ def create_app():
     else:
         app.config['SECRET_KEY'] = 'bibciejbdxhasxhajabchbc'
         app.config['SQLALCHEMY_DATABASE_URI'] = \
-            "postgres://oxxlnvxbjchtkc:a5244f271f3497e7b18bffbbcb38e6613d372bdd708fc982816d41bcd95b9dc9@ec2-52-86-56-90.compute-1.amazonaws.com:5432/d5ufnd1qarm2lr"
+            "postgresql://oxxlnvxbjchtkc:a5244f271f3497e7b18bffbbcb38e6613d372bdd708fc982816d41bcd95b9dc9@ec2-52-86-56-90.compute-1.amazonaws.com:5432/d5ufnd1qarm2lr"
 
 
     db.init_app(app)
