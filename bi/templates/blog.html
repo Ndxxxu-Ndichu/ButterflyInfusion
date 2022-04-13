@@ -80,7 +80,7 @@ twq('track','PageView');
                 </div>
               </div>
               <div class="body">
-                <div class="post-title" style="text-transform:capitalize;"><a href="blog-single.html">{{post.title}}</a></div>
+                <div class="post-title" style="text-transform:capitalize;"><a href="{{url_for('app.post', blog_id=post.blog_id)}}">{{post.title}}</a></div>
                 <img style="width:150px;" src="{{post.path}}">
               </div>
               <div class="footer">
