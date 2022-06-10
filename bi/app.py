@@ -97,7 +97,7 @@ def post(blog_id):
 
 @app.route('/poster')
 def poster():
-    blog_id = random.randint(1, 99)
+    blog_id = random.randint(1, 999)
     date = datetime.now()
     now = date.strftime('%d %b %Y')
     return render_template('poster.html', now=now, blog_id=blog_id)
