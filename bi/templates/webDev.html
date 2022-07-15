@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-18GFJXH5YV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-18GFJXH5YV');
+</script>
+  <!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o8ein');
+twq('track','PageView');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,6 +32,7 @@
   <link rel="stylesheet" href="{{url_for('static', filename='maicons.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='owl.carousel.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='theme.css')}}">
+  <link rel="shortcut icon" href="{{url_for('static', filename='bi.ico')}}" type="image/x-icon">
 
 </head>
 <body>
