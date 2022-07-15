@@ -9,7 +9,7 @@ def create_app():
     app = Flask(__name__)
     ENV = 'dev'
 
-    if ENV == 'dev':
+    if ENV == 'prod':
      app.config['SECRET_KEY'] = 'bibciejbdxhasxhajabchbc'
      app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:123456@localhost:5432/butterfly_blog"
     else:
