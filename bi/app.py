@@ -133,7 +133,9 @@ def poster_post():
    return render_template('poster.html')
 
 
-
+@app.route('/web-development')
+def web():
+    return render_template('webDev.html')
 
 
 
